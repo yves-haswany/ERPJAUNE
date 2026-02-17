@@ -1,0 +1,23 @@
+[project]
+name = "retail-saas-erp"
+version = "0.1.0"
+description = "Multi-tenant Retail SaaS ERP built with FastAPI"
+authors = [
+    { name = "Yves Haswany", email = "yves2k611@gmail.com" }
+]
+requires-python = ">=3.11"
+
+[tool.black]
+line-length = 88
+target-version = ["py311"]
+
+[tool.isort]
+profile = "black"
+
+[tool.pytest.ini_options]
+asyncio_mode = "auto"
+testpaths = ["tests"]
+
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
