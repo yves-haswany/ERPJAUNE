@@ -1,0 +1,15 @@
+{
+  "recommendations": [
+    "esbenp.prettier-vscode",            // Prettier
+    "dbaeumer.vscode-eslint",            // ESLint
+    "christian-kohler.path-intellisense",// Auto path suggestions
+    "ms-vscode.vscode-typescript-next", // TypeScript nightly
+    "wayou.vscode-todo-highlight",      // Highlight TODO/FIXME
+    "xabikos.javascriptsnippets",       // JS/TS snippets
+    "wix.vscode-import-cost",            // Shows size of imports
+    "visualstudioexptteam.vscodeintellicode" // AI code suggestions
+  ],
+  "unwantedRecommendations": [
+    "ms-ossdata.vscode-pgsql"           // Prevent PGSQL extension warnings
+  ]
+}
