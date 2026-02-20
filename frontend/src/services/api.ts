@@ -1,22 +1,17 @@
+import axios from "axios";
+
 const API_BASE = import.meta.env.VITE_API_URL;
 
-export async function loginUser(email: string, password: string) {
-  const res = await fetch(`${API_BASE}/auth/login`, {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({ email, password })
-  });
+const api = axios.create({
+  baseURL: API_BASE,
+});
 
-  if (!res.ok) throw new Error("Login failed");
-  return res.json();
-}
-
-export async function fetchProducts() {
+api.interceptors.request.use((config) => {
   const token = localStorage.getItem("token");
-  const res = await fetch(`${API_BASE}/products`, {
-    headers: { Authorization: `Bearer ${token}` }
-  });
+  if (token) {
+    config.headers.Authorization = `Bearer ${token}`;
+  }
+  return config;
+});
 
-  if (!res.ok) throw new Error("Failed to fetch products");
-  return res.json();
-}
+export default api; // ← THIS LINE IS IMPORTANT

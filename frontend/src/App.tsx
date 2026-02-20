@@ -1,8 +1,8 @@
 import React from "react";
 import { Routes, Route, Navigate } from "react-router-dom";
-import Login from "./pages/Login";
-import Dashboard from "./pages/Dashboard";
-import Products from "./pages/Products";
+import Login from "./pages/auth/Login";
+import Dashboard from "./pages/Dashboard/Dashboard";
+import Products from "./pages/Products/Products";
 
 function App() {
   const isAuthenticated = !!localStorage.getItem("token");
