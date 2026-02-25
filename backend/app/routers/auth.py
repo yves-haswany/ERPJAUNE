@@ -12,7 +12,7 @@ router = APIRouter(prefix="/auth", tags=["Auth"])
 @router.post("/login", response_model=TokenResponse)
 async def login(data: LoginRequest, db=Depends(get_db)):
     result = await db.execute(
-        select(User).where(User.username == data.username)
+        select(User).where(User.email == data.email)
     )
     user = result.scalar_one_or_none()
 
