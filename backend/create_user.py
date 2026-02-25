@@ -4,6 +4,7 @@ from app.core.database import AsyncSessionLocal
 from app.models.user import User
 from app.models.tenant import Tenant
 from passlib.context import CryptContext
+from sqlalchemy import select
 
 pwd_context = CryptContext(schemes=["bcrypt"], deprecated="auto")
 
