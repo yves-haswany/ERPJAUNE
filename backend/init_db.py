@@ -1,7 +1,7 @@
 import asyncio
 from app.core.database import engine, Base
 
-# IMPORTANT: import ALL models here
+# Import ALL models here
 from app.models.user import User
 from app.models.tenant import Tenant
 
